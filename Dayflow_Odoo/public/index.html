@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070b16" />
+  <title>Dayflow — People, simplified.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div id="toast" aria-live="polite"></div>
+
+  <section id="authView" class="auth-shell">
+    <div class="auth-visual">
+      <div class="orb orb-a"></div><div class="orb orb-b"></div>
+      <div class="brand-lockup">
+        <div class="brand-mark">D</div>
+        <div><strong>Dayflow</strong><span>HRMS</span></div>
+      </div>
+      <div class="auth-copy">
+        <div class="eyebrow">PEOPLE OPERATIONS, REIMAGINED</div>
+        <h1>Make work<br><em>flow.</em></h1>
+        <p>One calm workspace for people, attendance, leave and payroll.</p>
+      </div>
+      <div class="floating-preview">
+        <div class="preview-top"><span class="status-dot"></span> Workspace live <span>•••</span></div>
+        <div class="preview-number">94%</div>
+        <div class="preview-label">team attendance this week</div>
+        <div class="mini-bars"><i style="height:52%"></i><i style="height:70%"></i><i style="height:62%"></i><i style="height:84%"></i><i style="height:76%"></i><i style="height:91%"></i><i style="height:68%"></i></div>
+      </div>
+      <div class="auth-points">
+        <span><b>01</b> Role-aware workspace</span>
+        <span><b>02</b> Attendance that feels effortless</span>
+        <span><b>03</b> Payroll without the spreadsheet chaos</span>
+      </div>
+    </div>
+
+    <div class="auth-side">
+      <div class="auth-card">
+        <div class="mobile-brand"><div class="brand-mark">D</div><b>Dayflow</b></div>
+        <div class="tabs">
+          <button class="tab active" data-tab="signin">Sign in</button>
+          <button class="tab" data-tab="signup">Create account</button>
+        </div>
+
+        <form id="signinForm">
+          <div class="form-heading"><span class="kicker">WELCOME BACK</span><h2>Good to see you.</h2><p>Sign in to your Dayflow workspace.</p></div>
+          <label>Email<input id="loginEmail" type="email" autocomplete="email" required value="employee@dayflow.local"></label>
+          <label>Password<input id="loginPassword" type="password" autocomplete="current-password" required value="Employee@123"></label>
+          <button class="primary full btn-lg">Enter workspace <span>→</span></button>
+          <div class="demo-box"><strong>Demo access</strong><div><span>Employee</span> employee@dayflow.local</div><div><span>HR</span> admin@dayflow.local</div><small>Passwords are prefilled for the hackathon demo.</small></div>
+        </form>
+
+        <form id="signupForm" class="hidden">
+          <div class="form-heading"><span class="kicker">NEW TO DAYFLOW?</span><h2>Create your workspace.</h2><p>Set up an employee or HR account.</p></div>
+          <div class="grid2">
+            <label>Employee ID<input id="signupId" required></label>
+            <label>Full name<input id="signupName" required></label>
+          </div>
+          <label>Email<input id="signupEmail" type="email" required></label>
+          <label>Password<input id="signupPassword" type="password" minlength="8" required></label>
+          <label>Role<select id="signupRole"><option value="employee">Employee</option><option value="hr">HR / Admin</option></select></label>
+          <button class="primary full btn-lg">Create account <span>→</span></button>
+          <div id="verificationBox" class="demo-box hidden"></div>
+        </form>
+      </div>
+      <div class="auth-footer">DAYFLOW <span>•</span> Built for modern teams</div>
+    </div>
+  </section>
+
+  <section id="appView" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="side-brand">
+        <div class="brand-mark small">D</div>
+        <div><b>Dayflow</b><span>People OS</span></div>
+      </div>
+      <div class="workspace-pill"><span class="live-dot"></span><div><b>Workspace</b><small>Production ready</small></div></div>
+      <nav id="nav"></nav>
+      <div class="side-bottom">
+        <div id="sideUser"></div>
+        <button id="logoutBtn" class="logout"><span>↪</span> Log out</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="breadcrumb"><span id="roleLabel">WORKSPACE</span><i>/</i><strong id="pageTitle">Dashboard</strong></div>
+        <div class="top-actions">
+          <button class="icon-btn" onclick="showNotifications()" title="Notifications">♢<span class="notif-dot"></span></button>
+          <div class="avatar" id="avatar">D</div>
+        </div>
+      </header>
+      <div id="content"></div>
+    </main>
+  </section>
+
+  <script src="/app.js"></script>
+</body>
+</html>
